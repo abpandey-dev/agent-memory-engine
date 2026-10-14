@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="1200" height="720" fill="#FFFFFF"/>
+  <text x="40" y="52" font-size="28" font-weight="700" fill="#0F172A">What we get from it</text>
+  <text x="40" y="80" font-size="15" fill="#475569">Benchmark: 6 held-out synthetic users · 72 questions · same model (Claude Haiku 5.5) and prompt for every method · deterministic scoring</text>
+
+  <!-- Accuracy panel -->
+  <rect x="24" y="104" width="560" height="400" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="44" y="136" font-size="16" font-weight="700" fill="#0F172A">Accuracy</text>
+  <text x="44" y="158" font-size="12" fill="#64748B">share of the 72 questions answered correctly</text>
+  <g font-size="13">
+    <text x="214" y="212" text-anchor="end" fill="#334155">No memory</text>
+    <rect x="226" y="194" width="300" height="28" rx="4" fill="#F1F5F9"/>
+    <rect x="226" y="194" width="51" height="28" rx="4" fill="#94A3B8"/>
+    <text x="285" y="213" fill="#334155" font-weight="700">17%</text>
+
+    <text x="214" y="272" text-anchor="end" fill="#334155">Search over chat logs</text>
+    <rect x="226" y="254" width="300" height="28" rx="4" fill="#F1F5F9"/>
+    <rect x="226" y="254" width="75" height="28" rx="4" fill="#94A3B8"/>
+    <text x="309" y="273" fill="#334155" font-weight="700">25%</text>
+
+    <text x="214" y="332" text-anchor="end" fill="#334155">Whole history in prompt</text>
+    <rect x="226" y="314" width="300" height="28" rx="4" fill="#F59E0B"/>
+    <text x="516" y="333" text-anchor="end" fill="#FFFFFF" font-weight="700">100%</text>
+
+    <text x="214" y="392" text-anchor="end" fill="#0F172A" font-weight="700">Memory engine</text>
+    <rect x="226" y="374" width="300" height="28" rx="4" fill="#2563EB"/>
+    <text x="516" y="393" text-anchor="end" fill="#FFFFFF" font-weight="700">100%</text>
+  </g>
+  <text x="44" y="444" font-size="12" fill="#475569">Search over raw chat logs fails because questions are worded differently:</text>
+  <text x="44" y="464" font-size="12" fill="#475569">"what's my pet called?" vs "we adopted a beagle puppy and named him Biscuit".</text>
+  <text x="44" y="484" font-size="12" fill="#475569">Memories enriched with keywords at write time fix that.</text>
+
+  <!-- Tokens panel -->
+  <rect x="616" y="104" width="560" height="400" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="636" y="136" font-size="16" font-weight="700" fill="#0F172A">Context needed per question</text>
+  <text x="636" y="158" font-size="12" fill="#64748B">average input tokens, as the conversation history grows</text>
+  <line x1="660" y1="440" x2="1150" y2="440" stroke="#CBD5E1"/>
+  <!-- 8 conversations: full 1957 (h 86), memory 628 (h 28) ; 32 conversations: full 5459 (h 240), memory 616 (h 27) -->
+  <rect x="700" y="354" width="80" height="86" rx="4" fill="#F59E0B"/>
+  <text x="740" y="346" font-size="13" font-weight="700" fill="#B45309" text-anchor="middle">1,957</text>
+  <rect x="790" y="412" width="80" height="28" rx="4" fill="#2563EB"/>
+  <text x="830" y="404" font-size="13" font-weight="700" fill="#1D4ED8" text-anchor="middle">628</text>
+  <text x="785" y="464" font-size="13" fill="#334155" text-anchor="middle">8 conversations</text>
+
+  <rect x="930" y="200" width="80" height="240" rx="4" fill="#F59E0B"/>
+  <text x="970" y="192" font-size="13" font-weight="700" fill="#B45309" text-anchor="middle">5,459</text>
+  <rect x="1020" y="413" width="80" height="27" rx="4" fill="#2563EB"/>
+  <text x="1060" y="405" font-size="13" font-weight="700" fill="#1D4ED8" text-anchor="middle">616</text>
+  <text x="1015" y="464" font-size="13" fill="#334155" text-anchor="middle">32 conversations</text>
+
+  <rect x="1028" y="250" width="118" height="54" rx="8" fill="#DBEAFE"/>
+  <text x="1087" y="274" font-size="20" font-weight="800" fill="#1D4ED8" text-anchor="middle">9× fewer</text>
+  <text x="1087" y="294" font-size="11" fill="#1D4ED8" text-anchor="middle">tokens, same 100%</text>
+  <line x1="1060" y1="306" x2="1060" y2="396" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <rect x="660" y="478" width="14" height="14" rx="3" fill="#F59E0B"/><text x="680" y="490" font-size="12" fill="#334155">Whole history in prompt (grows with history)</text>
+  <rect x="960" y="478" width="14" height="14" rx="3" fill="#2563EB"/><text x="980" y="490" font-size="12" fill="#334155">Memory engine (flat)</text>
+
+  <!-- Outcome cards -->
+  <g>
+    <rect x="24" y="528" width="276" height="168" rx="14" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="44" y="574" font-size="34" font-weight="800" fill="#1D4ED8">100%</text>
+    <text x="44" y="604" font-size="14" font-weight="700" fill="#0F172A">correct on every type</text>
+    <text x="44" y="628" font-size="12" fill="#475569">single facts, updates, history,</text>
+    <text x="44" y="646" font-size="12" fill="#475569">facts spread over sessions,</text>
+    <text x="44" y="664" font-size="12" fill="#475569">linked names, unknowns</text>
+
+    <rect x="316" y="528" width="276" height="168" rx="14" fill="#F0FDF4" stroke="#BBF7D0"/>
+    <text x="336" y="574" font-size="34" font-weight="800" fill="#15803D">0</text>
+    <text x="336" y="604" font-size="14" font-weight="700" fill="#0F172A">invented answers</text>
+    <text x="336" y="628" font-size="12" fill="#475569">"What's my sister's name?" was</text>
+    <text x="336" y="646" font-size="12" fill="#475569">never said: 12 of 12 answered</text>
+    <text x="336" y="664" font-size="12" fill="#475569">"I don't know"</text>
+
+    <rect x="608" y="528" width="276" height="168" rx="14" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="628" y="574" font-size="34" font-weight="800" fill="#B45309">History</text>
+    <text x="628" y="604" font-size="14" font-weight="700" fill="#0F172A">kept, not overwritten</text>
+    <text x="628" y="628" font-size="12" fill="#475569">"Where do I live?" → Berlin</text>
+    <text x="628" y="646" font-size="12" fill="#475569">"Where did I live before?" → Izmir</text>
+    <text x="628" y="664" font-size="12" fill="#475569">both 100%</text>
+
+    <rect x="900" y="528" width="276" height="168" rx="14" fill="#FAF5FF" stroke="#E9D5FF"/>
+    <text x="920" y="574" font-size="34" font-weight="800" fill="#6E56CF">$0.0001</text>
+    <text x="920" y="604" font-size="14" font-weight="700" fill="#0F172A">per answer, any agent</text>
+    <text x="920" y="628" font-size="12" fill="#475569">via MCP in Claude Code.</text>
+    <text x="920" y="646" font-size="12" fill="#475569">Building memory: ~$0.007/user;</text>
+    <text x="920" y="664" font-size="12" fill="#475569">pays off after ~12 questions</text>
+  </g>
+</svg>
